@@ -41,4 +41,16 @@ config :phoenix, :json_library, Jason
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
+
+# Подключение к Базе Данных в dev-режиме (через Docker)
+config :todo_app, TodoApp.Repo,
+  username: "postgres",
+  password: "postgres",
+  hostname: "db",          # ← Docker-сервис из docker-compose.yml
+  database: "todo_app_dev",
+  port: 5432,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10 #Это нечто
+
+
 import_config "#{config_env()}.exs"
