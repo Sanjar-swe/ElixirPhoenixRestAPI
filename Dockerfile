@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM elixir:1.15-alpine
+FROM elixir:1.18-alpine
 
 #Install Dependencies
 RUN apk add --no-cache build-base git npm postgresql-client inotify-tools icu-data-full
