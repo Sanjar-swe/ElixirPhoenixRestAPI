@@ -1,11 +1,11 @@
 defmodule TodoAppWeb.Router do
   use TodoAppWeb, :router
-
+  import Phoenix.LiveView.Router
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, html: {TodoAppWeb.Layouts, :root}
+    plug :put_root_layout, {TodoAppWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -22,7 +22,6 @@ defmodule TodoAppWeb.Router do
   live "/todos", TodoLive.Index, :index
   live "/todos/new", TodoLive.Index, :new
   live "/todos/:id/edit", TodoLive.Index, :edit
-
   live "/todos/:id", TodoLive.Show, :show
   live "/todos/:id/show/edit", TodoLive.Show, :edit
 end

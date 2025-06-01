@@ -1,0 +1,3 @@
+code ./lib/todo_app_web/live/todo_live/index.ex открывает файл в мини окошке
+
+для поиска файлов в проекте пример grep -rl "def handle_params" .
